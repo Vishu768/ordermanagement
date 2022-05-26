@@ -1,0 +1,28 @@
+mat-form-field{
+
+
+  display: flex;
+  justify-content: center;
+  width: 400px;
+	margin: 0 auto;
+}
+
+
+
+mat-card {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  width:400px;
+	margin: 0 auto;
+  top: 20%;
+}
+
+.container{
+  padding-right: 20px;
+  margin-left: 140px;
+}
+
+
+
+

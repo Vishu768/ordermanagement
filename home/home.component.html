@@ -1,0 +1,62 @@
+<app-header></app-header>
+<mat-card class="main-card">
+  <div *ngIf="!isShown">
+  <mat-card [@card]>
+    <div class="titlecard">
+      <div class="flex-container">
+      <span *ngFor="let userName of Name">
+        <span>WELCOME ::</span>
+        {{userName.firstName}} </span>
+      <span>
+
+      <mat-form-field appearance="fill">
+      <mat-label>HOTEL NAMES</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let hotel of responseName" [(value)]="hotel.HotelName" (click)="hotelSelect(hotel.HotelName, hotel.HotelNumber, Name)">
+          {{hotel.HotelName}}
+        </mat-option>
+      </mat-select>
+      </mat-form-field>
+
+    </span>
+      <span>TOTAL AMOUNT {{sum}}</span>
+    </div>
+    </div>
+  </mat-card>
+  <br>
+  <mat-card [@card]>
+    <mat-list role="list">
+      <div class="titlecard">
+        <div class="flex-container">
+        <span>MENU</span>
+        <span>AMOUNT</span>
+        <span>QUANTITY</span>
+        <span>EachTotal</span>
+      </div>
+      </div>
+
+      <mat-list role="list" name="details" *ngFor="let foodtype of foodDetails" >
+        <div class="title">
+          <div class="flex-container">
+            <span >{{foodtype.foodNmae}}</span>
+            <span>{{foodtype.buyEach}}</span>
+            <span>
+              <app-counter (counterValue)="value = foodtype.quantity = $event"
+              (click)="quantity(foodDetails)">
+              </app-counter>
+            </span>
+            <span>{{foodtype.buyEach * foodtype.quantity}}</span>
+          </div>
+        </div>
+      </mat-list>
+
+    </mat-list>
+    <div class="align-center" >
+      <button *ngIf="isButton" mat-raised-button color="primary"  (click)="placeOrder(foodDetails)">Place order</button>
+    </div>
+  </mat-card>
+</div>
+<app-alert [message]="error" *ngIf="error" (close)="close()"></app-alert>
+</mat-card>
+
+

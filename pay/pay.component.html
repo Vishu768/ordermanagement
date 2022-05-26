@@ -1,0 +1,65 @@
+<app-header></app-header>
+<mat-card [@card]>
+  <mat-list role="list">
+    <div class="titlecard">
+      <div class="flex-container">
+        <span>FOOD NAME</span>
+        <span>QUANTITY</span>
+        <span>AMOUNT</span>
+      </div>
+    </div>
+    <mat-list *ngFor=" let orderDetails of items" >
+      <div class="title">
+        <div class="flex-container">
+          <span>{{orderDetails.foodNmae}}</span>
+          <span>{{orderDetails.quantity}}</span>
+          <span>{{orderDetails.buyEach * orderDetails.quantity}}</span>
+        </div>
+      </div>
+    </mat-list>
+    <mat-list>
+      <div class="align-center">
+<<<<<<< HEAD
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="value" (click)="this.isButton= true">
+=======
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="value" (click)="button()">
+>>>>>>> 3f751873c713f89481dab1ff8a4ce2d05d1192f9
+          <mat-radio-button value="CASH">CASH</mat-radio-button>
+          <mat-radio-button value="GPAY">GPAY</mat-radio-button>
+          <mat-radio-button value="CARD">CARD</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </mat-list>
+    <mat-list>
+      <div class="align-center" *ngFor=" let total of orders">
+        TOTAL
+        {{total.sum}}
+      </div>
+    </mat-list>
+    <mat-list>
+      <div class="align-center">
+<<<<<<< HEAD
+      <button mat-raised-button color="warn" (click)="back()">BACK</button> ||
+      <button *ngIf="isButton" mat-raised-button color="primary" (click)="payDetails(value)">PAY</button>
+=======
+      <button class="btn" mat-raised-button color="warn" (click)="back()">BACK</button>
+      <button class="btn" [disabled]="isButton" mat-raised-button color="primary" (click)="payDetails(value)">PAY</button>
+>>>>>>> 3f751873c713f89481dab1ff8a4ce2d05d1192f9
+      </div>
+    </mat-list>
+    <app-alert [message]="error" *ngIf="error" (close)="close()"></app-alert>
+  </mat-list>
+
+</mat-card>
+<div [@card] class="align-center" *ngIf="isShown">
+  <span >
+    {{successMessage}}
+  </span>
+  <mat-list>
+    <div class="aling-center">
+        <span>TOTAL PAID AMOUNT: {{amount}}</span>
+    </div>
+  </mat-list>
+</div>
+
+

@@ -1,0 +1,31 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.titlecard{
+  margin: 8px 8px 8px 0;
+}
+.title{
+  margin: 8px 8px 8px 8px 0;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 100px;
+}
+
+.align-center{
+  text-align: center;
+}
+.button-center{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn{
+  margin-right: 20px;
+}

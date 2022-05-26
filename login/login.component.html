@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 style="text-align:center;">User Login</h1>
+</div>
+
+
+  <mat-card>
+<<<<<<< HEAD
+    <!-- <div >
+      <app-alert [message]="error" *ngIf="errorMessage" (close)=""></app-alert>
+    </div> -->
+=======
+>>>>>>> 3f751873c713f89481dab1ff8a4ce2d05d1192f9
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput formControlName="username" type="email" placeholder="E-Mail">
+        <mat-error *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">Enter Valid Email</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="password" type="password"  placeholder="Password">
+        <mat-error *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Enter Valid password</mat-error>
+      </mat-form-field>
+      <br>
+      <div class="container">
+        <button class="btn" mat-raised-button color="accent" type="submit" >Login</button>
+      </div>
+    </form>
+    <app-alert [message]="error" *ngIf="error" (close)="close()"></app-alert>
+  </mat-card>
+
+
+
+
+
+
+
+
